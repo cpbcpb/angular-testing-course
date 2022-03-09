@@ -13,3 +13,8 @@ can use jasmine spy functionality.  createSpyObj.
 
 ## Dependency Injection in our tests.
 
+// The service does not have the responsibility of creating the service itself.
+// instead it receives it in the constructor such as above constructor(private logger: LoggerService)
+// this is called dependency injection
+// so its a good idea to use dependency injection in our tests.
+

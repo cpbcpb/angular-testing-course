@@ -23,7 +23,7 @@ beforeEach(()=> {
   TestBed.configureTestingModule({
     providers: [
       CalculatorService,
-      {provide: LoggerService, useValue: loggerSpy},
+      {provide: LoggerService, useValue:loggerSpy},
     ]
   })
 
