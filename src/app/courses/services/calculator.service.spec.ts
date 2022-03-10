@@ -29,7 +29,7 @@ beforeEach(()=> {
 
   // // create instance of the service I am testing
   // calculator = new CalculatorService(loggerSpy);
-  calculator = TestBed.get(CalculatorService);
+  calculator = TestBed.inject(CalculatorService);
 })
 
 

@@ -47,7 +47,7 @@ describe('HomeComponent', () => {
         fixture = TestBed.createComponent(HomeComponent);
         component = fixture.componentInstance;
         el = fixture.debugElement;
-        coursesService = TestBed.get(CoursesService);
+        coursesService = TestBed.inject(CoursesService);
       });
   }));
 
@@ -93,15 +93,15 @@ describe('HomeComponent', () => {
     //built out click utility function
     // there is an asynchronous operation when switching tabs on a child component, which uses requestAnimationFrame to show an animation.
     // it basically is calling setTimeout.  This makes the component asynchronous as well.
-    click(tabs[1]);
+    click(tabs[1], 2);
     fixture.detectChanges();
 
     setTimeout(() => {
-      const cardTitles = el.queryAll(By.css('.mat-card-title'));
+      const cardTitles = el.queryAll(By.css('.mat-tab-body-active .mat-card-title'));
       expect(cardTitles.length).toBeGreaterThan(0, "Could not find card titles");
       expect(cardTitles[0].nativeElement.textContent).toContain("Angular Security Course");
       done();
-    }, 200);
+    }, 1200);
 
 
   });
